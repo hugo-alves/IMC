@@ -13,6 +13,26 @@
 		<link rel="stylesheet" href="assets/main.css" />
 		<noscript><link rel="stylesheet" href="assets/noscript.css" /></noscript>
 		<script async src="//www.googletagmanager.com/gtag/js?id=G-FS9Q67BVGX"></script>
+		<script>
+			function sendWebhook() {
+			
+				var http = new XMLHttpRequest();
+				var url = 'https://hooks.airtable.com/workflows/v1/genericWebhook/appOUFjnxvlFZgxAd/wflVTsZ0qF1MYGfb9/wtrW0HlIshI1Od4S7';
+				var content = {"Study id" : "test data"};
+				http.open('POST', url, true);
+			
+				//Send the proper header information along with the request
+				http.setRequestHeader('Content-type', 'application/json');
+			
+				http.onreadystatechange = function() {//Call a function when the state changes.
+					if(http.readyState == 4 && http.status == 200) {
+						alert(http.responseText);
+					}
+				}
+				http.send(JSON.stringify(content));
+			
+			}
+		</script>
 		<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-FS9Q67BVGX', { 'send_page_view': false, 'anonymize_ip': true });gtag('config', 'G-FS9Q67BVGX', { 'page_path': '/' });</script>
 		function getUrlVars() {
 		var vars = {};
@@ -47,25 +67,6 @@
 			alert(studyId)
 	
 	</script>
-	<script>
-		function sendWebhook() {
-		
-			var http = new XMLHttpRequest();
-			var url = 'https://hooks.airtable.com/workflows/v1/genericWebhook/appOUFjnxvlFZgxAd/wflVTsZ0qF1MYGfb9/wtrW0HlIshI1Od4S7';
-			var content = {"Study id" : "test data"};
-			http.open('POST', url, true);
-		
-			//Send the proper header information along with the request
-			http.setRequestHeader('Content-type', 'application/json');
-		
-			http.onreadystatechange = function() {//Call a function when the state changes.
-				if(http.readyState == 4 && http.status == 200) {
-					alert(http.responseText);
-				}
-			}
-			http.send(JSON.stringify(content));
-		
-		}
-		</script>
+
 	</body>
 </html>
