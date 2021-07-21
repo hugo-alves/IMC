@@ -23,7 +23,7 @@
 			
 				var http = new XMLHttpRequest();
 				var url = 'https://hook.integromat.com/wfyui64srfoh3aktaoly01zbdjc19dn7';
-				var content = {"Study id" : studyId};
+				var content = {"Study id" : studyId, "participant id" : participantId};
 				http.open('POST', url, true);
 			
 				//Send the proper header information along with the request
@@ -56,13 +56,7 @@
 			</div>
 		</div>
 		<script src="assets/main.js"></script>
-		<script>
-			const queryString = window.location.search;
-			const urlParams = new URLSearchParams(queryString);
-			const studyId = urlParams.get('study_id')
-			alert(studyId)
-	
-	</script>
+
 
 	</body>
 </html>
