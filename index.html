@@ -14,29 +14,32 @@
 		<noscript><link rel="stylesheet" href="assets/noscript.css" /></noscript>
 		<script async src="//www.googletagmanager.com/gtag/js?id=G-FS9Q67BVGX"></script>
 		<script>
-			function sendWebhook() {
-				const queryString = window.location.search;
-				const urlParams = new URLSearchParams(queryString);
-				const studyId = urlParams.get('study_id')
-				const participantId = urlParams.get('participant_id')
-				alert(studyId + participantId)
-			
-				var http = new XMLHttpRequest();
-				var url = 'https://hook.integromat.com/wfyui64srfoh3aktaoly01zbdjc19dn7';
-				var content = {"Study id" : studyId, "participant id" : participantId};
-				http.open('POST', url, true);
-			
-				//Send the proper header information along with the request
-				http.setRequestHeader('Content-type', 'application/json');
-			
-				http.onreadystatechange = function() {//Call a function when the state changes.
-					if(http.readyState == 4 && http.status == 200) {
-						alert(http.responseText);
-					}
-				}
-				http.send(JSON.stringify(content));
-			
+			function closeTab(){
+				window.close();
 			}
+		
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			const studyId = urlParams.get('study_id')
+			const participantId = urlParams.get('participant_id')
+			alert(studyId + participantId)
+		
+			var http = new XMLHttpRequest();
+			var url = 'https://hook.integromat.com/wfyui64srfoh3aktaoly01zbdjc19dn7';
+			var content = {"Study id" : studyId, "participant id" : participantId};
+			http.open('POST', url, true);
+		
+			//Send the proper header information along with the request
+			http.setRequestHeader('Content-type', 'application/json');
+		
+			http.onreadystatechange = function() {//Call a function when the state changes.
+				if(http.readyState == 4 && http.status == 200) {
+					alert(http.responseText);
+				}
+			}
+			http.send(JSON.stringify(content));
+		
+			
 		</script>
 		<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-FS9Q67BVGX', { 'send_page_view': false, 'anonymize_ip': true });gtag('config', 'G-FS9Q67BVGX', { 'page_path': '/' });</script>
 	</head>
@@ -48,7 +51,7 @@
 					<hr id="divider02">
 					<ul id="buttons01" class="buttons">
 						<li>
-							<a onclick="window.close()" href="javascript:window.open('','_self').close();" class="button n01" >Confirm Attention</a>
+							<a onclick="closeTab()" href="javascript:window.open('','_self').close();" class="button n01" >Confirm Attention</a>
 							<!-- <input id="confrim-attention" type="button" class="button n01" value="Confirm Attention" onclick="sendWebhook()" /> -->
 
 						</li>
