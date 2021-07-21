@@ -1,12 +1,52 @@
-<script src="UrlManager.js"></script>
-
-
-<script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const studyId = urlParams.get('study_id')
-        alert(studyId)
-
-</script>
-
-dfsfdgd
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>IMC</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta name="description" content="just a test" />
+		<meta property="og:site_name" content="IMC" />
+		<meta property="og:title" content="IMC" />
+		<meta property="og:type" content="website" />
+		<meta property="og:description" content="just a test" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="assets/main.css" />
+		<noscript><link rel="stylesheet" href="assets/noscript.css" /></noscript>
+		<script async src="//www.googletagmanager.com/gtag/js?id=G-FS9Q67BVGX"></script>
+		<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-FS9Q67BVGX', { 'send_page_view': false, 'anonymize_ip': true });gtag('config', 'G-FS9Q67BVGX', { 'page_path': '/' });</script>
+		function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+		function(m,key,value) {
+		vars[key] = value;
+		});
+		return vars;
+		}
+		var fType = getUrlVars()["utm_source"];
+	</head>
+	<body class="is-loading">
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
+					<h1 id="thanks"><span>Your response has been recorded, thank you.</span><br /><span>You can now close this tab.</span></h1>
+					<hr id="divider02">
+					<ul id="buttons01" class="buttons">
+						<li>
+							<a href="#thanks" class="button n01">Close tab</a>
+						</li><li>
+							<a href="#thanks" class="button n02">Button</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="assets/main.js"></script>
+		<script>
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			const studyId = urlParams.get('study_id')
+			alert(studyId)
+	
+	</script>
+	</body>
+</html>
