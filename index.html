@@ -15,6 +15,11 @@
 		<script async src="//www.googletagmanager.com/gtag/js?id=G-FS9Q67BVGX"></script>
 		<script>
 			function sendWebhook() {
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				const studyId = urlParams.get('study_id')
+				const participantId = urlParams.get('participant_id')
+				alert(studyId + participantId)
 			
 				var http = new XMLHttpRequest();
 				var url = 'https://hook.integromat.com/wfyui64srfoh3aktaoly01zbdjc19dn7';
@@ -34,15 +39,6 @@
 			}
 		</script>
 		<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-FS9Q67BVGX', { 'send_page_view': false, 'anonymize_ip': true });gtag('config', 'G-FS9Q67BVGX', { 'page_path': '/' });</script>
-		function getUrlVars() {
-		var vars = {};
-		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
-		function(m,key,value) {
-		vars[key] = value;
-		});
-		return vars;
-		}
-		var fType = getUrlVars()["utm_source"];
 	</head>
 	<body class="is-loading">
 		<div id="wrapper">
