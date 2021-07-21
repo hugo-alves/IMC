@@ -22,7 +22,6 @@
 			const urlParams = new URLSearchParams(queryString);
 			const studyId = urlParams.get('study_id')
 			const participantId = urlParams.get('participant_id')
-			alert(studyId + participantId)
 		
 			var http = new XMLHttpRequest();
 			var url = 'https://hook.integromat.com/wfyui64srfoh3aktaoly01zbdjc19dn7';
@@ -34,7 +33,7 @@
 		
 			http.onreadystatechange = function() {//Call a function when the state changes.
 				if(http.readyState == 4 && http.status == 200) {
-					alert(http.responseText);
+					
 				}
 			}
 			http.send(JSON.stringify(content));
