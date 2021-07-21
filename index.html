@@ -1,1 +1,10 @@
+<script src="UrlManager.js"></script>
 
+
+<script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const studyId = urlParams.get('study_id')
+        alert(studyId)
+
+</script>
